@@ -1,5 +1,5 @@
 body {
-  font-family:Verdana, Geneva, Tahoma, sans-serif;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -8,18 +8,23 @@ body {
 header {
   background-color: #333;
   color: #fff;
-  /* padding: 1rem; */
   display: flex;
   justify-content: space-between;
   align-items: center;
   position: fixed;
   top: 0;
   z-index: 9999;
-  width: 100%;
+  width: 100vw;
 }
-.logo{
+.logo {
   width: 200px;
   height: 70px;
+}
+.logodiv {
+  margin-left: 5rem;
+}
+.aboutdiv {
+  margin-right: 5rem;
 }
 nav a {
   color: #fff;
@@ -31,7 +36,7 @@ nav a {
   grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
   gap: 2rem;
   padding: 2rem;
-  margin-top: 50px;
+  margin: 50px auto 0 auto;
 }
 .product {
   border: 3px solid #858585;
@@ -39,19 +44,18 @@ nav a {
   padding: 1rem;
   text-align: center;
   transition: 0.3s ease-in;
- 
 }
-.product button{
-    color: #000000;
-    border: 2px solid black;
-    padding: 0.5rem 1rem;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: 0.2s ease-in;
+.product button {
+  color: #000000;
+  border: 2px solid black;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.2s ease-in;
 }
-.product button:hover{
-    background-color: black;
-    color: white;
+.product button:hover {
+  background-color: black;
+  color: white;
 }
 .product:hover {
   box-shadow: rgba(3, 3, 3, 0.705) 0px 7px 29px 0px;
@@ -60,21 +64,66 @@ nav a {
   max-width: 70%;
   border-radius: 20px;
 }
-.product img:hover{
-    transform: scale(1.05);
-    transition: 0.2s ease-in;
-    cursor: pointer;
+.product img:hover {
+  transform: scale(1.05);
+  transition: 0.2s ease-in;
+  cursor: pointer;
 }
 footer {
   background-color: #333;
   color: #fff;
   text-align: center;
-  padding: 5rem;
+  padding: 3rem;
 }
 .social-media {
   display: flex;
   justify-content: space-around;
 }
-.social-media a{
+.social-media div{
+    margin: auto;
+}
+.social-media a {
+  color: white;
+}
+.fa fa-facebook{
+    font-size: 2rem;
     color: white;
+    background-color: blue;
+}
+@media (min-width: 500px) and (max-width: 915px) {
+  .product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+    width: 70%;
+    margin: 90px auto 30px auto;
+    gap: 2rem;
+    padding: 0;
+  }
+}
+@media (max-width: 500px) {
+  .product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    width: 90%;
+    margin: 90px auto 30px auto;
+    padding: 0;
+  }
+  .logodiv {
+    margin-left: 1rem;
+  }
+  .aboutdiv {
+    margin-right: 3rem;
+  }
+  .header {
+    margin-bottom: 100px;
+  }
+  .social-media {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    row-gap: 10px;
+  }
+  footer {
+    padding: 1rem;
+  }
 }
