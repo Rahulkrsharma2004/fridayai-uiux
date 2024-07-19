@@ -453,59 +453,38 @@ footer .bottom-details .bottom_text {
 }
 
 @media (max-width: 900px) {
-  footer .footercontent .link-boxes{
+  footer .footercontent .link-boxes {
     flex-wrap: wrap;
   }
-  footer .footercontent .link-boxes .input-box{
+  footer .footercontent .link-boxes .input-box {
     width: 40%;
     margin-top: 10px;
   }
 }
 
-@media (max-width: 770px){
-  footer{
-    position: relative;
-  }
-  footer .footercontent .link-boxes {
-    width: 100%;
-  }
-  .footercontent .top .logo-details{
-    font-size: 26px;
-  }
-  .footercontent .top .media-icons a{
-    height: 35px;
-    width: 35px;
-    font-size: 14px;
-    line-height: 35px;
-  }
-  footer .footercontent .link-boxes .box{
-    width: calc(100% / 3 - 10px);
-  }
-  .bottom-details .bottom_text span,
-  .bottom-details .bottom_text a{
-    font-size: 12px;
+@media (max-width: 770px) {
+  .box:not(.input-box) {
+    display: none;
   }
 }
 
-@media (max-width: 520px){
-  footer::before{
+@media (max-width: 520px) {
+  footer::before {
     top: 145px;
   }
-  footer .footercontent .top{
+  footer .footercontent .top {
     flex-direction: column;
   }
-  .footercontent .top .media-icons{
+  .footercontent .top .media-icons {
     margin-top: 10px;
   }
-  footer .footercontent .link-boxes .box{
+  footer .footercontent .link-boxes .box {
     width: calc(100% / 2 - 10px);
   }
-  footer .footercontent .link-boxes .input-box{
+  footer .footercontent .link-boxes .input-box {
     width: 100%;
   }
 }
-
-
 
 @media (min-width: 500px) and (max-width: 915px) {
   .product-grid {
@@ -542,7 +521,7 @@ footer .bottom-details .bottom_text {
   .product img {
     width: 40%;
     border-radius: 10px;
-    height: 30%;
+    height: 150px;
   }
   .logodiv {
     margin-left: 1rem;
