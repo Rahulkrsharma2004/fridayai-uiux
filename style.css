@@ -1,12 +1,13 @@
 body {
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-family: "Poppins", sans-serif;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  background-color: #ffffff91;
+  background-color: #f8d1d191;
 }
 header {
-  background-color: #333;
+  background-color: #ffffff57;
+  backdrop-filter: blur(10px);
   color: #fff;
   display: flex;
   justify-content: space-between;
@@ -16,8 +17,17 @@ header {
   z-index: 9999;
   width: 100vw;
 }
+.aboutBtn {
+  background-color: #ffa794;
+  color: #000000;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.2s ease-in;
+}
 .logo {
-  width: 200px;
+  width: 70px;
   height: 70px;
 }
 .logodiv {
@@ -31,6 +41,193 @@ nav a {
   margin-left: 1rem;
   text-decoration: none;
 }
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap");
+
+html {
+  scroll-behavior: smooth;
+}
+
+#slider {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  width: 100%;
+  background-image: radial-gradient(
+      at 40% 20%,
+      rgb(255, 184, 122) 0px,
+      transparent 50%
+    ),
+    radial-gradient(at 80% 0%, rgb(31, 221, 255) 0px, transparent 50%),
+    radial-gradient(at 0% 50%, rgb(255, 219, 222) 0px, transparent 50%),
+    radial-gradient(at 80% 50%, rgb(255, 133, 173) 0px, transparent 50%),
+    radial-gradient(at 0% 100%, rgb(255, 181, 138) 0px, transparent 50%),
+    radial-gradient(at 80% 100%, rgb(107, 102, 255) 0px, transparent 50%),
+    radial-gradient(at 0% 0%, rgb(255, 133, 167) 0px, transparent 50%);
+  background-repeat: no-repeat;
+}
+
+#slidermain {
+  width: 800px;
+}
+
+#slidermain h1 {
+  text-align: center;
+  font-size: clamp(2rem, 4vw, 2.6rem);
+  color: #fff;
+  margin-top: 80px;
+}
+
+.slide-row {
+  display: flex;
+  width: 3200px;
+  transition: 0.5s;
+}
+
+.slide-col {
+  position: relative;
+  width: 800px;
+  height: 400px;
+}
+
+.hero {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+}
+
+.hero img {
+  height: 100%;
+  border-radius: 10px;
+  width: 320px;
+  pointer-events: none;
+  user-select: none;
+}
+
+.content {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 520px;
+  height: 270px;
+  color: #4d4352;
+  background: rgba(255, 255, 255, 0.7);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(4.5px);
+  -webkit-backdrop-filter: blur(4.5px);
+  border-radius: 10px;
+  padding: 45px;
+  z-index: 2;
+  user-select: none;
+}
+
+.content p {
+  font-size: 1.25rem;
+  font-weight: 400;
+  line-height: 1.3;
+}
+
+.content h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-top: 35px;
+  color: #4d4352;
+}
+
+.indicator {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+.indicator .btn {
+  display: inline-block;
+  height: 15px;
+  width: 15px;
+  margin: 4px;
+  border-radius: 15px;
+  background: #fff;
+  cursor: pointer;
+  transition: all 0.5s ease-in-out;
+}
+
+.btn.active {
+  width: 30px;
+}
+
+.slider {
+  width: 100%;
+  overflow: hidden;
+}
+
+@media (max-width: 850px) {
+  #slidermain {
+    width: 500px;
+  }
+
+  .slide-row {
+    width: 2000px;
+  }
+
+  .slide-col {
+    width: 500px;
+    height: 250px;
+  }
+
+  .hero img {
+    width: 200px;
+  }
+
+  .content {
+    width: 320px;
+    height: 200px;
+    padding: 20px;
+  }
+
+  .content p {
+    font-size: 0.9rem;
+  }
+
+  .content h2 {
+    font-size: 1.2rem;
+    margin-top: 20px;
+  }
+}
+
+@media (max-width: 550px) {
+  #slidermain {
+    width: 300px;
+  }
+
+  .slide-row {
+    width: 1200px;
+  }
+
+  .slide-col {
+    width: 500px;
+    height: 300px;
+  }
+
+  .hero {
+    top: 60%;
+    height: 100px;
+    z-index: 5;
+  }
+
+  .hero img {
+    width: 100px;
+  }
+
+  .content {
+    width: 300px;
+  }
+}
+
 .product-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
@@ -61,35 +258,255 @@ nav a {
   box-shadow: rgba(3, 3, 3, 0.705) 0px 7px 29px 0px;
 }
 .product img {
-  max-width: 70%;
-  border-radius: 20px;
+  width: 60%;
+  border-radius: 10px;
+  height: 50%;
 }
 .product img:hover {
   transform: scale(1.05);
   transition: 0.2s ease-in;
   cursor: pointer;
 }
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
+
 footer {
-  background-color: #333;
-  color: #fff;
-  text-align: center;
-  padding: 3rem;
+  background-image: radial-gradient(
+      at 40% 20%,
+      rgb(255, 184, 122) 0px,
+      transparent 50%
+    ),
+    radial-gradient(at 80% 0%, rgb(31, 221, 255) 0px, transparent 50%),
+    radial-gradient(at 0% 50%, rgb(255, 219, 222) 0px, transparent 50%),
+    radial-gradient(at 80% 50%, rgb(255, 133, 173) 0px, transparent 50%),
+    radial-gradient(at 0% 100%, rgb(255, 181, 138) 0px, transparent 50%),
+    radial-gradient(at 80% 100%, rgb(107, 102, 255) 0px, transparent 50%),
+    radial-gradient(at 0% 0%, rgb(255, 133, 167) 0px, transparent 50%);
+  background-repeat: no-repeat;
+  width: 100%;
+  bottom: 0;
+  left: 0;
 }
-.social-media {
+footer .footercontent {
+  max-width: 1250px;
+  margin: auto;
+  padding: 30px 40px 40px 40px;
+}
+footer .footercontent .top {
   display: flex;
-  justify-content: space-around;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 50px;
 }
-.social-media div{
-    margin: auto;
+.footercontent .top .logo-details {
+  color: #000000;
+  font-size: 30px;
 }
-.social-media a {
-  color: white;
+.footercontent .top .media-icons {
+  display: flex;
 }
-.fa fa-facebook{
-    font-size: 2rem;
-    color: white;
-    background-color: blue;
+.footercontent .top .media-icons a {
+  height: 40px;
+  width: 40px;
+  margin: 0 8px;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 40px;
+  color: #ffffff;
+  font-size: 17px;
+  text-decoration: none;
+  transition: all 0.4s ease;
 }
+.top .media-icons a:nth-child(1) {
+  background: #4267b2;
+}
+.top .media-icons a:nth-child(1):hover {
+  color: #4267b2;
+  background: #ffffff;
+}
+.top .media-icons a:nth-child(2) {
+  background: #1da1f2;
+}
+.top .media-icons a:nth-child(2):hover {
+  color: #1da1f2;
+  background: #fff;
+}
+.top .media-icons a:nth-child(3) {
+  background: #e1306c;
+}
+.top .media-icons a:nth-child(3):hover {
+  color: #e1306c;
+  background: #fff;
+}
+.top .media-icons a:nth-child(4) {
+  background: #0077b5;
+}
+.top .media-icons a:nth-child(4):hover {
+  color: #0077b5;
+  background: #fff;
+}
+.top .media-icons a:nth-child(5) {
+  background: #ff0000;
+}
+.top .media-icons a:nth-child(5):hover {
+  color: #ff0000;
+  background: #fff;
+}
+footer .footercontent .link-boxes {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+footer .footercontent .link-boxes .box {
+  width: calc(100% / 5 - 10px);
+}
+.footercontent .link-boxes .box .link_name {
+  color: #000000;
+  font-size: 18px;
+  font-weight: 400;
+  margin-bottom: 10px;
+  position: relative;
+}
+.link-boxes .box .link_name::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  height: 2px;
+  width: 75px;
+  background: #000000;
+}
+.footercontent .link-boxes .box li {
+  margin: 6px 0;
+  list-style: none;
+}
+.footercontent .link-boxes .box li a {
+  color: #000000;
+  font-size: 14px;
+  font-weight: 400;
+  text-decoration: none;
+  opacity: 0.8;
+  transition: all 0.4s ease;
+}
+.footercontent .link-boxes .box li a:hover {
+  opacity: 1;
+  text-decoration: underline;
+}
+.footercontent .link-boxes .input-box {
+  margin-right: 55px;
+}
+.link-boxes .input-box input {
+  height: 40px;
+  width: calc(100% + 55px);
+  outline: none;
+  border: 2px solid #7a7a7a;
+  background: #f1f1f1;
+  border-radius: 4px;
+  padding: 0 15px;
+  font-size: 15px;
+  color: #fff;
+  margin-top: 5px;
+}
+.link-boxes .input-box input::placeholder {
+  color: #000000;
+  font-size: 16px;
+}
+.link-boxes .input-box input[type="button"] {
+  background: #ffffff;
+  color: #140b5c;
+  border: none;
+  font-size: 18px;
+  font-weight: 500;
+  margin: 4px 0;
+  opacity: 0.8;
+  cursor: pointer;
+  transition: all 0.4s ease;
+}
+.input-box input[type="button"]:hover {
+  opacity: 1;
+}
+footer .bottom-details {
+  width: 100%;
+  background: #424242;
+}
+footer .bottom-details .bottom_text {
+  max-width: 1250px;
+  margin: auto;
+  padding: 20px 40px;
+  display: flex;
+  justify-content: space-between;
+}
+.bottom-details .bottom_text span,
+.bottom-details .bottom_text a {
+  font-size: 14px;
+  font-weight: 300;
+  color: #fff;
+  opacity: 0.8;
+  text-decoration: none;
+}
+.bottom-details .bottom_text a:hover {
+  opacity: 1;
+  text-decoration: underline;
+}
+.bottom-details .bottom_text a {
+  margin-right: 10px;
+}
+
+@media (max-width: 900px) {
+  footer .footercontent .link-boxes{
+    flex-wrap: wrap;
+  }
+  footer .footercontent .link-boxes .input-box{
+    width: 40%;
+    margin-top: 10px;
+  }
+}
+
+@media (max-width: 770px){
+  footer{
+    position: relative;
+  }
+  footer .footercontent .link-boxes {
+    width: 100%;
+  }
+  .footercontent .top .logo-details{
+    font-size: 26px;
+  }
+  .footercontent .top .media-icons a{
+    height: 35px;
+    width: 35px;
+    font-size: 14px;
+    line-height: 35px;
+  }
+  footer .footercontent .link-boxes .box{
+    width: calc(100% / 3 - 10px);
+  }
+  .bottom-details .bottom_text span,
+  .bottom-details .bottom_text a{
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 520px){
+  footer::before{
+    top: 145px;
+  }
+  footer .footercontent .top{
+    flex-direction: column;
+  }
+  .footercontent .top .media-icons{
+    margin-top: 10px;
+  }
+  footer .footercontent .link-boxes .box{
+    width: calc(100% / 2 - 10px);
+  }
+  footer .footercontent .link-boxes .input-box{
+    width: 100%;
+  }
+}
+
+
+
 @media (min-width: 500px) and (max-width: 915px) {
   .product-grid {
     display: grid;
@@ -100,6 +517,20 @@ footer {
     padding: 0;
   }
 }
+@media (max-width: 768px) {
+  ul li a {
+    width: 70px;
+    height: 70px;
+    line-height: 70px;
+    font-size: 25px;
+    margin: 0 20px;
+  }
+  .product img {
+    width: 40%;
+    border-radius: 10px;
+    height: 30%;
+  }
+}
 @media (max-width: 500px) {
   .product-grid {
     display: grid;
@@ -107,6 +538,11 @@ footer {
     width: 90%;
     margin: 90px auto 30px auto;
     padding: 0;
+  }
+  .product img {
+    width: 40%;
+    border-radius: 10px;
+    height: 30%;
   }
   .logodiv {
     margin-left: 1rem;
@@ -123,7 +559,11 @@ footer {
     flex-direction: column;
     row-gap: 10px;
   }
-  footer {
-    padding: 1rem;
+  ul li a {
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    font-size: 25px;
+    margin: 0 10px;
   }
 }
